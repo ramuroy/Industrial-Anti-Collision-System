@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/badge/Platform-ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32-S3" />
 <img src="https://img.shields.io/badge/Ranging-UWB-1f6feb?style=for-the-badge" alt="UWB" />
 <img src="https://img.shields.io/badge/Fieldbus-MODBUS%20RTU%20%2F%20RS485-660066?style=for-the-badge" alt="MODBUS RTU" />
-<img src="https://img.shields.io/badge/Build-Solo%20%C2%B7%20End--to--End-8957e5?style=for-the-badge" alt="Solo end-to-end" />
+<img src="https://img.shields.io/badge/Scope-End--to--End-8957e5?style=for-the-badge" alt="End-to-end" />
 <img src="https://img.shields.io/badge/Status-Deployed%20in%20Production-1f9b4e?style=for-the-badge" alt="Deployed" />
 </p>
 
@@ -18,7 +18,7 @@
 
 ---
 
-> ℹ️ **About this repository** — This is a **case-study / showcase** of an industrial system I built **single-handedly, end to end** — hardware, firmware, testing, and on-site deployment. The production implementation is **proprietary to Radiogeet and its client**, so this repo documents the architecture, engineering decisions, and my contributions rather than hosting the source. Happy to walk through the technical details on request.
+> ℹ️ **About this repository** — This is a **case-study / showcase** of an industrial system I worked on **end to end** — hardware, firmware, testing, and on-site deployment. The production implementation is **proprietary to Radiogeet and its client**, so this repo documents the architecture, engineering decisions, and my contributions rather than hosting the source. Happy to walk through the technical details on request.
 
 ---
 
@@ -76,9 +76,9 @@ The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-
 | **Interface** | Embedded HTTP web UI |
 | **Language** | Embedded C / C++ |
 
-## 👤 My Role — Solo, End-to-End Ownership
+## 👤 My Role — End-to-End Ownership
 
-I built this project **single-handedly across the entire stack** as the **Embedded Systems Engineer** at **Radiogeet** — from picking the hardware to commissioning it on the factory floor. Every layer below is my own work:
+I worked on this project **end to end across the entire stack** as the **Embedded Systems Engineer** at **Radiogeet** — from picking the hardware to commissioning it on the factory floor:
 
 **🔩 Hardware**
 - **Selected the hardware** and components for the whole system.
