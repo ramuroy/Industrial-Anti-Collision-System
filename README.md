@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/Platform-ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32-S3" />
 <img src="https://img.shields.io/badge/Ranging-UWB-1f6feb?style=for-the-badge" alt="UWB" />
 <img src="https://img.shields.io/badge/Fieldbus-MODBUS%20RTU%20%2F%20RS485-660066?style=for-the-badge" alt="MODBUS RTU" />
+<img src="https://img.shields.io/badge/Build-Solo%20%C2%B7%20End--to--End-8957e5?style=for-the-badge" alt="Solo end-to-end" />
 <img src="https://img.shields.io/badge/Status-Deployed%20in%20Production-1f9b4e?style=for-the-badge" alt="Deployed" />
 </p>
 
@@ -17,7 +18,7 @@
 
 ---
 
-> ℹ️ **About this repository** — This is a **case-study / showcase** of industrial firmware I designed and shipped. The production implementation is **proprietary to Radiogeet and its client**, so this repo documents the architecture, engineering decisions, and my contributions rather than hosting the source. Happy to walk through the technical details on request.
+> ℹ️ **About this repository** — This is a **case-study / showcase** of an industrial system I built **single-handedly, end to end** — hardware, firmware, testing, and on-site deployment. The production implementation is **proprietary to Radiogeet and its client**, so this repo documents the architecture, engineering decisions, and my contributions rather than hosting the source. Happy to walk through the technical details on request.
 
 ---
 
@@ -75,15 +76,24 @@ The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-
 | **Interface** | Embedded HTTP web UI |
 | **Language** | Embedded C / C++ |
 
-## 👤 My Role
+## 👤 My Role — Solo, End-to-End Ownership
 
-As the **Embedded Systems Engineer** on this project at **Radiogeet**, I:
+I built this project **single-handedly across the entire stack** as the **Embedded Systems Engineer** at **Radiogeet** — from picking the hardware to commissioning it on the factory floor. Every layer below is my own work:
 
-- Designed and implemented the **ESP32-S3 firmware** end to end, leveraging the dual-core architecture.
-- Allocated **Core 0** to time-critical UWB ranging and **Core 1** to zone logic, control, and the web UI.
+**🔩 Hardware**
+- **Selected the hardware** and components for the whole system.
+- **Wired and integrated the Masibus DO cards** and the **8-channel industrial relay system**.
+- Built out the **RS485 physical layer** and node interconnects.
+
+**💻 Firmware**
+- Designed and implemented the **complete ESP32-S3 firmware**, leveraging the dual-core architecture.
+- **Core 0** → time-critical **UWB ranging**; **Core 1** → zone safety logic, system control, and the embedded **web UI**.
 - Implemented **ESP-NOW** for low-latency node-to-node communication.
-- Established **MODBUS RTU / RS485** communication with Masibus DO cards to drive the 8-channel relay system.
-- Delivered the system into **production deployment at Tata Steel BlueScope**.
+- **Established MODBUS RTU over RS485** communication with the Masibus DO cards to drive the 8-channel relay system.
+
+**🧪 Testing & Deployment**
+- **Tested and validated** the full system end to end.
+- **Deployed and commissioned it on-site in production at Tata Steel BlueScope**.
 
 ---
 
