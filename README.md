@@ -34,17 +34,17 @@ It runs today on the floor at **Tata Steel BlueScope**.
 flowchart LR
     subgraph Node["ESP32-S3 Node (dual-core)"]
         direction TB
-        C0["Core 0 — Real-time\nUWB distance ranging"]
-        C1["Core 1 — Zone logic,\nsystem control & Web UI"]
+        C0["Core 0 — Real-time<br/>UWB distance ranging"]
+        C1["Core 1 — Zone logic,<br/>system control & Web UI"]
         C0 -- shared state --> C1
     end
 
-    A["📡 UWB anchors / tags\non cranes & zones"] -- range --> C0
+    A["📡 UWB anchors / tags<br/>on cranes & zones"] -- range --> C0
     Node -- "ESP-NOW (low-latency P2P)" --> B["Peer Nodes"]
     C1 -- "MODBUS RTU over RS485" --> D["Masibus DO cards"]
-    D --> E["⚙️ 8-channel industrial\nrelay system"]
-    E --> F["🚨 Alarms / interlocks /\ncrane stop signals"]
-    C1 -- HTTP --> G["🖥️ Embedded Web UI\n(config & monitoring)"]
+    D --> E["⚙️ 8-channel industrial<br/>relay system"]
+    E --> F["🚨 Alarms / interlocks /<br/>crane stop signals"]
+    C1 -- HTTP --> G["🖥️ Embedded Web UI<br/>(config & monitoring)"]
 ```
 
 ### Dual-core design
