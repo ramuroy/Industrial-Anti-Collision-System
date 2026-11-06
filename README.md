@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/Status-Deployed%20in%20Production-1f9b4e?style=for-the-badge" alt="Deployed" />
 </p>
 
-<b>🏭 Deployed at Tata Steel BlueScope</b> &nbsp;·&nbsp; Built during my Embedded Engineer internship at <b>Radiogeet</b>
+<b>🏭 Deployed at Tata Steel Colors (formerly Tata BlueScope Steel)</b> &nbsp;·&nbsp; Built during my Embedded Engineer internship at <b>Radiogeet</b>
 
 </div>
 
@@ -26,7 +26,7 @@
 
 The **Anti-Collision System** prevents hazardous collisions during overhead **crane operations** in a heavy-industry steel plant. It continuously measures the distance between moving equipment using **Ultra-Wideband (UWB)** ranging, evaluates **zone-based safety logic** in real time, and drives **industrial outputs** (alarms, relays, interlocks) to slow or stop a crane before a collision can occur.
 
-It runs today on the floor at **Tata Steel BlueScope**.
+It runs today on the floor at **Tata Steel Colors**.
 
 ## 🧠 How It Works
 
@@ -93,7 +93,7 @@ I worked on this project **end to end across the entire stack** as the **Embedde
 
 **🧪 Testing & Deployment**
 - **Tested and validated** the full system end to end.
-- **Deployed and commissioned it on-site in production at Tata Steel BlueScope**.
+- **Deployed and commissioned it on-site in production at Tata Steel Colors**.
 
 ---
 
