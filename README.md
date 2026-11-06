@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/Status-Deployed%20in%20Production-1f9b4e?style=for-the-badge" alt="Deployed" />
 </p>
 
-<b>🏭 Deployed at Tata Steel BlueScope</b> &nbsp;·&nbsp; Built during my Embedded Systems Engineer internship at <b>Radiogeet</b>
+<b>🏭 Deployed at Tata Steel BlueScope</b> &nbsp;·&nbsp; Built during my Embedded Engineer internship at <b>Radiogeet</b>
 
 </div>
 
@@ -78,7 +78,7 @@ The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-
 
 ## 👤 My Role — End-to-End Ownership
 
-I worked on this project **end to end across the entire stack** as the **Embedded Systems Engineer** at **Radiogeet** — from picking the hardware to commissioning it on the factory floor:
+I worked on this project **end to end across the entire stack** as the **Embedded Engineer** at **Radiogeet** — from picking the hardware to commissioning it on the factory floor:
 
 **🔩 Hardware**
 - **Selected the hardware** and components for the whole system.
