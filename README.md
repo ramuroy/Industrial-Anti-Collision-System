@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/Status-Deployed%20in%20Production-1f9b4e?style=for-the-badge" alt="Deployed" />
 </p>
 
-<b>🏭 Deployed at Tata Steel Colors (formerly Tata BlueScope Steel)</b> &nbsp;·&nbsp; Built during my Embedded Engineer internship at <b>Radiogeet</b>
+<b>🏭 Deployed at Tata Steel Colors (formerly Tata BlueScope Steel)</b> &nbsp;·&nbsp; Built as an Embedded Engineer at <b>Radiogeet</b>
 
 </div>
 
