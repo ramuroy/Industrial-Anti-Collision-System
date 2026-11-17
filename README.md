@@ -44,8 +44,25 @@ flowchart LR
     C1 -- "MODBUS RTU over RS485" --> D["Masibus DO cards"]
     D --> E["⚙️ 8-channel industrial<br/>relay system"]
     E --> F["🚨 Alarms / interlocks /<br/>crane stop signals"]
+    E --> P["🏭 Plant PLC"]
+    P --> Q["🛑 Crane brakes"]
+    P --> L["🗂️ Event log<br/>(PLC + PC)"]
     C1 -- HTTP --> G["🖥️ Embedded Web UI<br/>(config & monitoring)"]
 ```
+
+### Why UWB, not Bluetooth signal strength
+Bluetooth signal strength was tried first. The warehouse is large and the cranes travel a long way, so at those distances the Bluetooth link did not hold. Signal strength is also a poor measure of distance: obstacles, reflections off steel and antenna orientation all weaken the signal without the distance changing. UWB measures **time of flight** instead (radio covers about 30 cm per nanosecond), so the system uses **Qorvo DWM1000** UWB modules, rated by the maker to about 10 cm.
+
+### Traffic-light safety zones
+The display works like traffic lights, so anyone in the cab can read it at a glance:
+
+| Distance between cranes | Light | What happens |
+|---|---|---|
+| Over 25 m | 🟢 Green | Normal operation; the live distance is always shown, which also shows the system is working |
+| 15 m to 25 m | 🟡 Yellow | Warning |
+| Under 15 m | 🔴 Red | Loud siren, and the brakes are applied automatically through the plant PLC |
+
+The relay outputs feed the plant's PLC, which controls the crane brakes. Every warning and near miss is logged with its time, on a PC and in the PLC, so events can be reviewed against shift timings.
 
 ### Dual-core design
 The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-critical timing isolated from everything else:
@@ -58,7 +75,9 @@ The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-
 ## ⚙️ Key Engineering
 
 - 📏 **UWB proximity detection** — real-time distance ranging between cranes and defined safety zones.
-- 🧮 **Zone-based safety logic** — configurable warning/danger zones that escalate from alert → interlock → stop.
+- 🧮 **Zone-based safety logic** — traffic-light zones: green above 25 m, yellow warning from 15 to 25 m, red under 15 m with a siren and automatic braking.
+- 🏭 **PLC integration** — relay outputs into the plant PLC, which applies the crane brakes.
+- 🗂️ **Event logging** — every warning and near miss timestamped, kept on a PC and in the PLC.
 - 📡 **ESP-NOW** — low-latency, peer-to-peer wireless links between distributed system nodes (no AP dependency).
 - 🔌 **MODBUS RTU over RS485** — robust industrial fieldbus to **Masibus DO cards**, driving an **8-channel relay system**.
 - 🖥️ **Embedded web interface** — on-device configuration and live monitoring served straight from the ESP32-S3.
@@ -69,10 +88,10 @@ The firmware leverages the **ESP32-S3's dual-core architecture** to keep safety-
 | Area | Technologies |
 |------|--------------|
 | **MCU** | ESP32-S3 (dual-core), ESP-IDF |
-| **Ranging** | Ultra-Wideband (UWB) |
+| **Ranging** | Ultra-Wideband (UWB), Qorvo DWM1000 modules |
 | **Wireless** | ESP-NOW |
 | **Fieldbus** | MODBUS RTU over RS485, Masibus DO cards |
-| **Outputs** | 8-channel industrial relay system |
+| **Outputs** | 8-channel industrial relay system → plant PLC (crane brakes); traffic-light indication and siren |
 | **Interface** | Embedded HTTP web UI |
 | **Language** | Embedded C / C++ |
 
